@@ -29,8 +29,15 @@ async function get_token() {
 }
 
 app.get('/', async (req, res) => {
-  const accessToken = await get_token();
-  res.send(accessToken);
+  response = await fetch('https://my.jasminsoftware.com/api/312711/312711-0001/salesCore/salesItems', {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${await get_token()}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+  })
+  res.send(await response.json());
 });
 
 app.listen(port, () => {
