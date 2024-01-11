@@ -40,6 +40,118 @@ app.get('/', async (req, res) => {
   res.send(await response.json());
 });
 
+app.get('/businessCore/items', async (req, res) => {
+  response = await fetch('https://my.jasminsoftware.com/api/312711/312711-0001/businessCore/items', {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${await get_token()}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+  })
+  res.send(await response.json());
+});
+
+app.post('/businessCore/items', async (req, res) => {
+  response = await fetch('https://my.jasminsoftware.com/api/312711/312711-0001/businessCore/items', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${await get_token()}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify(req.body)
+  })
+  res.send(await response.json());
+});
+
+app.get('/billing/invoices', async (req, res) => {
+  response = await fetch('https://my.jasminsoftware.com/api/312711/312711-0001/billing/invoices', {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${await get_token()}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+  })
+  res.send(await response.json());
+});
+
+app.post('/billing/invoices', async (req, res) => {
+  response = await fetch('https://my.jasminsoftware.com/api/312711/312711-0001/billing/invoices', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${await get_token()}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify(req.body)
+  })
+  res.send(await response.json());
+});
+
+app.get('/purchases/orders', async (req, res) => {
+  response = await fetch('https://my.jasminsoftware.com/api/312711/312711-0001/purchases/orders', {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${await get_token()}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+  })
+  res.send(await response.json());
+});
+
+app.post('/purchases/orders', async (req, res) => {
+  response = await fetch('https://my.jasminsoftware.com/api/312711/312711-0001/purchases/orders', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${await get_token()}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify(req.body)
+  })
+  res.send(await response.json());
+});
+
+app.get('/identity/users', async (req, res) => {
+  response = await fetch('https://my.jasminsoftware.com/api/312711/312711-0001/identity/users', {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${await get_token()}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+  })
+  res.send(await response.json());
+});
+
+app.post('/identity/users', async (req, res) => {
+  response = await fetch('https://my.jasminsoftware.com/api/312711/312711-0001/identity/users', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${await get_token()}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify(req.body)
+  })
+  res.send(await response.json());
+});
+
+app.get('/materialsCore/warehouses', async (req, res) => {
+  response = await fetch('https://my.jasminsoftware.com/api/312711/312711-0001/materialsCore/warehouses', {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${await get_token()}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+  })
+  res.send(await response.json());
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
